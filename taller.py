@@ -1,5 +1,5 @@
 import numpy as np
-import Libreria1 as lib
+from Libreria1 import *
 
 def proba(a,b):
     aux = ProductIntVec(b,a)
