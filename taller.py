@@ -28,3 +28,24 @@ def calculo(a, indice):
     for i in range(2):
         res = res + (proba[i]*vp[indice][i])
     return res
+#4.4.1
+def comprueba():
+    s = (2**(1/2))/2
+    U1 = [[(0,0),(1,0)],[(1,0),(0,0)]]
+    U2 = [[(s,0),(s,0)],[(s,0),(-s,0)]]
+    if Uni(U1) and Uni(U2):
+        aux = multiMatrix(U1,U2)
+        return Uni(aux)
+
+#4.4.2
+def billar():
+    s = 1/ (2**(1/2))
+    matriz =[[(0,0),(s,0),(s,0),(0,0)],
+             [(0,s),(0,0),(0,0),(s,0)],
+             [(s,0),(0,0),(0,0),(0,s)],
+             [(0,0),(s,0),(-s,0),(0,0)]]
+    vector = [(1,0),(0,0),(0,0),(0,0)]
+    for i in range(3):
+        vector = Accion(matriz,vector)
+    proba = (modulo(vector[3]))**2
+    return proba
